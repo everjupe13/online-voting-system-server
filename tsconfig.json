@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "typeRoots": [
+      "./types/*.d.ts"
+    ],
+    // "paths": {
+      // "core/*": ["./src/core/*"],
+      // "dependency/*": ["./src/dependency/*"],
+      // "infrastructure/*": ["./src/infrastructure/*"],
+      // "ui/*": ["./src/ui/*"],
+      // "config/*": ["./test/config/*"],
+      // "*": [
+      //   "./@types/*"
+      // ]
+    // }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

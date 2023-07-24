@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "ignore": [
+    "*.json"
+  ],
+  "execMap": {
+    "ts": "ts-node"
+  }
+}

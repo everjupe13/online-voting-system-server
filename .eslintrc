@@ -1,0 +1,111 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "mocha": true
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-base",
+        "plugin:prettier/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "project": "./tsconfig.json",
+        "createDefaultProgram": true
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/explicit-member-accessibility": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "import/extensions": "off",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    ["parent", "sibling", "index"]
+                ],
+                "newlines-between": "always-and-inside-groups"
+            }
+        ],
+        "class-methods-use-this": "off",
+        "max-len": "off",
+        "no-unused-vars": "error",
+        "no-console": "error",
+        "no-undef": "error",
+        "no-underscore-dangle": "off",
+        "no-useless-constructor": "off",
+        "no-empty-function": "off"
+    },
+    "settings":  {
+        "import/resolver": {
+            "node": {
+                "paths": ["src", "test"],
+                "extensions": [
+                    ".ts"
+                ]
+            }
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts"
+            ]
+        }
+    },
+    "overrides": [
+        {
+            "files": [ "src/ui/**/*" ],
+            "rules": {
+                "no-restricted-imports": ["error", {
+                    "patterns": ["dependency", "infrastructure"]
+                }]
+            }
+        },
+        {
+            "files": [ "src/infrastructure/**/*" ],
+            "rules": {
+                "no-restricted-imports": ["error", {
+                    "patterns": ["dependency", "ui"]
+                }]
+            }
+        },
+        {
+            "files": [ "src/core/**/*" ],
+            "rules": {
+                "no-restricted-imports": ["error", {
+                    "patterns": ["dependency", "ui", "infrastructure"]
+                }]
+            }
+        },
+        {
+            "files": [ "src/core/domainServices/**/*" ],
+            "rules": {
+                "no-restricted-imports": ["error", {
+                    "patterns": ["dependency", "ui", "infrastructure", "applicationServices"]
+                }]
+            }
+        },
+        {
+            "files": [ "src/core/domain/**/*" ],
+            "rules": {
+                "no-restricted-imports": ["error", {
+                    "patterns": ["dependency", "ui", "infrastructure", "applicationServices", "domainServices"]
+                }]
+            }
+        }
+    ]
+}
