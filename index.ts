@@ -14,6 +14,6 @@ app.all('*', (req, res) => {
   res.json({ error: 'incorrect path' })
 })
 
-app.listen(port, () => {
-    console.log(`🚀 Server ready at: http://localhost:${port}`)
-})
+
+// eslint-disable-next-line no-console
+app.listen(port, () => console.log(`🚀 Server listening at: http://localhost:${port}`))
