@@ -1,12 +1,12 @@
-export {}
+// export {}
 
-declare global {
-  namespace Express {
-    export interface Request {
-      user: {
-        id: string;
-        password: string
-      }
-    }
-  }
-}
+// declare global {
+//   namespace Express {
+//     export interface Request {
+//       user: {
+//         id: string;
+//         password: string
+//       }
+//     }
+//   }
+// }
