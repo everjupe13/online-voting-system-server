@@ -6,6 +6,7 @@ import { topicsRoutes } from './routes/topicsRoutes'
 import { votesRoutes } from './routes/votesRoutes'
 import { starsRoutes } from './routes/starsRoutes'
 
+import { router } from './src'
 
 const app = express()
 
@@ -16,5 +17,8 @@ app.use(topicsRoutes)
 app.use(votesRoutes)
 app.use(profileRoutes)
 app.use(starsRoutes)
+
+
+app.use(router)
 
 export default app

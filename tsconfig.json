@@ -1,4 +1,7 @@
 {
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
@@ -10,23 +13,29 @@
     "lib": [
       "es5",
       "es6",
+      "ESNext",
       "dom"
     ],
     "typeRoots": [
       "./types/*.d.ts"
     ],
-    // "paths": {
-      // "core/*": ["./src/core/*"],
+    "baseUrl": ".",
+    "paths": {
+      "core/*": ["./src/core/*"],
       // "dependency/*": ["./src/dependency/*"],
-      // "infrastructure/*": ["./src/infrastructure/*"],
-      // "ui/*": ["./src/ui/*"],
+      "infrastructure/*": ["./src/infrastructure/*"],
+      "ui/*": ["./src/ui/*"],
+      "@/*": ["./src/*"],
       // "config/*": ["./test/config/*"],
       // "*": [
-      //   "./@types/*"
+        // "./@types/*"
       // ]
-    // }
+    }
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "./src"
   ]
 }

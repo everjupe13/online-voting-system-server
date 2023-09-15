@@ -33,7 +33,7 @@ router.get('/topics/search', checkAuth, async (req: ExtendedRequest, res) => {
   const topicsVotes = await VoteService.getTopicVotes({ topics })
   const extendedTopics = TopicsService.withVotes(topics, topicsVotes, { extendUserData: true, user: req.user })
 
-  return res.status(200).json({ status: true, topics: extendedTopics })
+  return res.status(404).json({ status: true, customData: 'imCustom', topics: extendedTopics })
 })
 
 router.get('/topics/search/:id', checkAuth, async (req: ExtendedRequest, res) => {
